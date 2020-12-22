@@ -3,7 +3,7 @@ from snake_body_part import body_part
 
 
 # initial state
-def new_snake(no_of_initial_body_parts):
+def new_snake(no_of_initial_body_parts=3):
     """Returns a new snake with 3 parts at x - coordinates 0 , -20 and -30"""
     snake_body = []
     x_cor = 0
