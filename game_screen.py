@@ -5,3 +5,6 @@ SCREEN = Screen()
 SCREEN.setup(width=600, height=600)
 SCREEN.title("My Snake Game")
 SCREEN.bgcolor("black")
+
+# Animation off  settings
+SCREEN.tracer(0)
