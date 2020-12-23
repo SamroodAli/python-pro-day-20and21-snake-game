@@ -12,6 +12,7 @@ class Snake:
         self.snake_body = []
         self.create_new_snake()
         self.head = self.snake_body[0]
+        self.setup_direction_event_listeners()
 
     def create_new_snake(self):
         """Returns a new snake with 3 parts at x - coordinates 0 , -20 and -30"""

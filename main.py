@@ -8,9 +8,6 @@ from snake import Snake
 # new Snake instance
 snake = Snake()
 
-# event listeners
-snake.setup_direction_event_listeners()
-
 food = Food()
 # starting snake
 game_is_on = True
