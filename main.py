@@ -1,5 +1,4 @@
 """Main game file"""
-import turtle
 import time
 
 from food import Food
@@ -15,11 +14,13 @@ snake.setup_direction_event_listeners()
 food = Food()
 # starting snake
 game_is_on = True
-food.move_random()
 while game_is_on:
     screen.update()
     time.sleep(0.1)
     snake.start_snake()
-
+    # Detection collision with food
+    if snake.head.distance(food) < 12:
+        screen.title("nom nom nom")
+        food.move_random()
 
 screen.exitonclick()
