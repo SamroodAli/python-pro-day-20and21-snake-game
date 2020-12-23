@@ -4,7 +4,7 @@ from game_screen import SCREEN
 import turtle
 
 
-def start_snake(snake, speed=0.1):
+def move(snake, speed):
     def turn_east():
         nonlocal snake
         snake[0].setheading(0)
