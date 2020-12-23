@@ -1,20 +1,25 @@
 """Main game file"""
+import turtle
+import time
+
+from food import Food
 from game_screen import screen
 from snake import Snake
-from food import Food
-import turtle
 
 # new Snake instance
 snake = Snake()
-food = Food()
-food.move_random()
-# event listeners
-turtle.onkey(key="w", fun=snake.snake_up)
-turtle.onkey(key="a", fun=snake.snake_left)
-turtle.onkey(key="s", fun=snake.snake_down)
-turtle.onkey(key="d", fun=snake.snake_right)
 
+# event listeners
+snake.setup_direction_event_listeners()
+
+food = Food()
 # starting snake
-snake.start_snake()
+game_is_on = True
+food.move_random()
+while game_is_on:
+    screen.update()
+    time.sleep(0.1)
+    snake.start_snake()
+
 
 screen.exitonclick()
