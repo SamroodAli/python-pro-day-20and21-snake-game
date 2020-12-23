@@ -1,12 +1,12 @@
 """game screen settings"""
 from turtle import Screen
 
-SCREEN = Screen()
-SCREEN.setup(width=600, height=600)
-SCREEN.title("My Snake Game")
-SCREEN.bgcolor("black")
+screen = Screen()
+screen.setup(width=600, height=600)
+screen.title("My Snake Game")
+screen.bgcolor("black")
 
 # Animation off  settings
-SCREEN.tracer(0)
+screen.tracer(0)
 # screen set up to listen for key events
-SCREEN.listen()
+screen.listen()
