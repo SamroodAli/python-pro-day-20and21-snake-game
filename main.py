@@ -7,6 +7,7 @@ import turtle
 # new Snake instance
 snake = Snake()
 food = Food()
+food.move_random()
 # event listeners
 turtle.onkey(key="w", fun=snake.snake_up)
 turtle.onkey(key="a", fun=snake.snake_left)

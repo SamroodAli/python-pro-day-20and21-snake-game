@@ -10,3 +10,8 @@ class Food(Turtle):
         self.speed(0)
         self.shape("circle")
         self.shapesize(stretch_len=0.5, stretch_wid=0.5)
+
+    def move_random(self):
+        x = randint(0, 280)
+        y = randint(0, 280)
+        self.goto(x, y)

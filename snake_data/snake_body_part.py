@@ -2,7 +2,7 @@
 from turtle import Turtle
 
 
-def body_part(is_head=False, turtle=Turtle):
+def body_part(turtle=Turtle):
     """returns a new snake body part"""
     snake_part = turtle(shape="square")
     snake_part.color("white")
