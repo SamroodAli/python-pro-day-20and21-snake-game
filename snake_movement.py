@@ -13,3 +13,4 @@ def start_snake(snake, speed=0.1):
         time.sleep(speed)
         SCREEN.update()
 
+
