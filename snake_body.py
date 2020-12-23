@@ -9,7 +9,7 @@ def new_snake(no_of_initial_additional_body_parts=3):
     x_cor = 0
     for _ in range(no_of_initial_additional_body_parts):
         new_body_part = body_part()
-        x_cor += 20
+        x_cor -= 20
         new_body_part.setx(x_cor)
         snake_body.append(new_body_part)
     return snake_body

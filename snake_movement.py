@@ -7,22 +7,22 @@ import turtle
 def start_snake(snake, speed=0.1):
     def turn_east():
         nonlocal snake
-        snake[-1].setheading(0)
+        snake[0].setheading(0)
         SCREEN.update()
 
     def turn_north():
         nonlocal snake
-        snake[-1].setheading(90)
+        snake[0].setheading(90)
         SCREEN.update()
 
     def turn_west():
         nonlocal snake
-        snake[-1].setheading(180)
+        snake[0].setheading(180)
         SCREEN.update()
 
     def turn_south():
         nonlocal snake
-        snake[-1].setheading(270)
+        snake[0].setheading(270)
         SCREEN.update()
 
     turtle.onkey(key="w", fun=turn_north)
@@ -33,11 +33,13 @@ def start_snake(snake, speed=0.1):
     SCREEN.update()
     game_over = False
     while not game_over:
-        for index in range(0, len(snake)-1):
-            next_snake_part_coordinates = snake[index+1].position()
-            snake[index].goto(next_snake_part_coordinates)
-        snake[-1].forward(20)
+        SCREEN.update()
         time.sleep(speed)
+        for index in range(len(snake)-1, 0, -1):
+            # snake part at index takes snake part at index-1's position
+            new_coordinates = snake[index-1].position()
+            snake[index].goto(new_coordinates)
+        snake[0].forward(20)
         SCREEN.update()
 
 
