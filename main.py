@@ -5,7 +5,9 @@ from food import Food
 from game_screen import screen
 from snake import Snake
 from scoreboard import ScoreBoard
+from wall import Wall
 # new Snake instance
+wall = Wall()
 snake = Snake()
 scoreboard = ScoreBoard()
 food = Food()
@@ -15,11 +17,11 @@ while game_is_on:
     screen.update()
     time.sleep(0.1)
     snake.start_snake()
-    # Detection collision with food
+    # Detect collision with food
     if snake.head.distance(food) < 15:
         screen.title("nom nom nom")
         scoreboard.add_score()
         food.refresh()
-
+    # Detect collision with wall
 
 screen.exitonclick()
