@@ -3,8 +3,8 @@ RIGHT = 0
 UP = 90
 LEFT = 180
 DOWN = 270
-NO_OF_INITIAL_BODY_PARTS = 3
 SNAKE_COLOR = "white"
+STARTING_POSITIONS = [(0, 0), (-20, 0), (-40, 0)]
 
 
 class Snake:
@@ -16,15 +16,18 @@ class Snake:
 
     def create_new_snake(self):
         """Returns a new snake with 3 parts at x - coordinates 0 , -20 and -30"""
-        x_cor = 0
-        for _ in range(NO_OF_INITIAL_BODY_PARTS):
-            new_body_part = Turtle(shape="square")
-            new_body_part.color(SNAKE_COLOR)
-            new_body_part.penup()
-            new_body_part.speed(0)
-            x_cor -= 20
-            new_body_part.setx(x_cor)
-            self.snake_body.append(new_body_part)
+        for position in STARTING_POSITIONS:
+            self.add_segment(position)
+
+    def add_segment(self,position):
+        new_segment = Turtle(shape="square")
+        new_segment.color(SNAKE_COLOR)
+        new_segment.penup()
+        new_segment.goto(position)
+        self.snake_body.append(new_segment)
+
+    def extend(self):
+        pass
 
     # snake movement method
     def start_snake(self):
