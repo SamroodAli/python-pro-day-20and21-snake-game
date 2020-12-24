@@ -23,5 +23,11 @@ while game_is_on:
         scoreboard.add_score()
         food.refresh()
     # Detect collision with wall
+    x_cor = snake.head.xcor()
+    y_cor = snake.head.ycor()
+    if x_cor > 250 or x_cor < -250 or y_cor > 250 or y_cor < -250:
+        game_is_on = False
+        scoreboard.game_over()
+
 
 screen.exitonclick()
