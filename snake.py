@@ -27,6 +27,8 @@ class Snake:
         self.snake_body.append(new_segment)
 
     def extend(self):
+        last_position = self.snake_body[-1].position()
+        self.add_segment(last_position)
         pass
 
     # snake movement method
