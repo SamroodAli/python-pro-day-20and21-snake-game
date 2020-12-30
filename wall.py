@@ -1,3 +1,4 @@
+"""Wall class"""
 from turtle import Turtle
 
 
@@ -7,6 +8,7 @@ class Wall(Turtle):
         self.create_wall()
 
     def create_wall(self):
+        """create new wall"""
         self.color("yellow")
         self.penup()
         self.goto(250, 250)

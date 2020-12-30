@@ -43,6 +43,3 @@ class SnakeGame:
                     self.game_is_on = False
                     self.scoreboard.game_over()
 
-    def reset_screen(self):
-        self.screen.resetscreen()
-        self.screen.tracer(0)

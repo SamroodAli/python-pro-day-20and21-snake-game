@@ -1,3 +1,4 @@
+"""Snake class"""
 from turtle import Turtle, onkey
 RIGHT = 0
 UP = 90
@@ -19,7 +20,8 @@ class Snake:
         for position in STARTING_POSITIONS:
             self.add_segment(position)
 
-    def add_segment(self,position):
+    def add_segment(self, position):
+        """Add new snake segment"""
         new_segment = Turtle(shape="square")
         new_segment.color(SNAKE_COLOR)
         new_segment.penup()
@@ -27,12 +29,14 @@ class Snake:
         self.snake_body.append(new_segment)
 
     def extend(self):
+        """Add a segment to snake tail position"""
         last_position = self.snake_body[-1].position()
         self.add_segment(last_position)
         pass
 
     # snake movement method
     def start_snake(self):
+        """Start moving snake, each segment moves to it's previous segment position"""
         for index in range(len(self.snake_body) - 1, 0, -1):
             # snake part at index takes snake part at index-1's position
             new_coordinates = self.snake_body[index - 1].position()
@@ -40,22 +44,27 @@ class Snake:
         self.head.forward(20)
 
     def snake_right(self):
+        """Snake move right"""
         if self.head.heading() != LEFT:
             self.head.setheading(0)
 
     def snake_up(self):
+        """Snake move up"""
         if self.head.heading() != DOWN:
             self.head.setheading(90)
 
     def snake_left(self):
+        """Snake move left"""
         if self.head.heading() != RIGHT:
             self.head.setheading(180)
 
     def snake_down(self):
+        """Snake move down"""
         if self.head.heading() != UP:
             self.head.setheading(270)
 
     def setup_direction_event_listeners(self):
+        """Snake move event listeners setup"""
         onkey(key="w", fun=self.snake_up)
         onkey(key="a", fun=self.snake_left)
         onkey(key="s", fun=self.snake_down)

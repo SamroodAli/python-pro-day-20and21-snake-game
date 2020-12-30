@@ -5,6 +5,7 @@ SCORE_COLOR = "white"
 ALIGN = "center"
 FONT = ("Courier", 20, "normal")
 
+
 class ScoreBoard(Turtle):
     """Scoreboard class to track score and high score"""
     def __init__(self):
