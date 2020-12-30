@@ -13,7 +13,7 @@ class ScoreBoard(Turtle):
         self.color(SCORE_COLOR)
         self.hideturtle()
         self.penup()
-        self.goto(0, 260)
+        self.goto(0, 250)
         self.update_scoreboard()
 
     def update_scoreboard(self):
