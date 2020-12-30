@@ -6,12 +6,24 @@ ALIGN = "center"
 FONT = ("Courier", 20, "normal")
 
 
+def read_score():
+    """Read previous high score from data.txt"""
+    with open("data.txt") as file:
+        return int(file.read())
+
+
+def write_score(high_score):
+    """Writes latest high score to data.txt"""
+    with open("data.txt",mode="w") as file:
+        file.write(str(high_score))
+
+
 class ScoreBoard(Turtle):
     """Scoreboard class to track score and high score"""
     def __init__(self):
         super().__init__()
         self.score = 0
-        self.high_score = 0
+        self.high_score = read_score()
         self.color(SCORE_COLOR)
         self.hideturtle()
         self.penup()
@@ -33,6 +45,7 @@ class ScoreBoard(Turtle):
         """Game over function"""
         if self.score > self.high_score:
             self.high_score = self.score
+            write_score(self.high_score)
         self.update_scoreboard()
         self.score = 0
         self.goto(0, 0)
