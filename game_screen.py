@@ -6,7 +6,7 @@ screen.setup(width=600, height=600)
 screen.title("My Snake Game")
 screen.bgcolor("black")
 
-# Animation off  settings
+# turning animation off
 screen.tracer(0)
-# screen set up to listen for key events
+# listening for key press events
 screen.listen()
